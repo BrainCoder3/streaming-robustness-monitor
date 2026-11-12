@@ -61,6 +61,14 @@ KAFKA_BOOTSTRAP=localhost:9094 python -m pytest tests/test_kafka_integration.py
 
 The mild noise (σ = 0.3) is already detected, before the model is clearly wrong: the confidence moves first, which is exactly why a label-free signal is useful.
 
+## Verification
+
+The full stack was run with Docker Compose (Docker Desktop 4.99, engine 29.9.3, Windows 11) on 12 November 2026:
+
+- the three topics received **1 600 `inputs`, 1 600 `predictions` and 2 `alerts`**;
+- the monitor logged `DEGRADED` after event 499 and `RECOVERED` after event 1 299, **identical to the offline demo** (same code, different bus);
+- `tests/test_kafka_integration.py` passes against the running broker (`KAFKA_BOOTSTRAP=localhost:9094`).
+
 ## Limits
 
 - The data is the scikit-learn **digits** set (8×8 images) and the noise is synthetic Gaussian noise. This is a controlled setting to study the monitoring layer, not a claim about real production data.
