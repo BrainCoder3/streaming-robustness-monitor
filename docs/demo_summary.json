@@ -1,0 +1,31 @@
+{
+  "first_noisy_event": 400,
+  "false_alarms_before_noise": 0,
+  "detection_delay_events": 100,
+  "recovery_delay_events": 100,
+  "alerts": [
+    {
+      "kind": "DEGRADED",
+      "window_index": 9,
+      "last_event_id": 499,
+      "conf_mean": 0.7653529402570963,
+      "accuracy": 0.84,
+      "reason": "confidence 0.765 < 0.834; accuracy 0.840 < 0.867"
+    },
+    {
+      "kind": "RECOVERED",
+      "window_index": 25,
+      "last_event_id": 1299,
+      "conf_mean": 0.8800690270939344,
+      "accuracy": 0.94,
+      "reason": "back within baseline"
+    }
+  ],
+  "baseline": {
+    "conf_mean": 0.893264845589887,
+    "conf_std": 0.14020457711091697,
+    "accuracy": 0.9665738161559888
+  },
+  "confidence_threshold": 0.833781081252774,
+  "events": 1600
+}
